@@ -1,0 +1,279 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Gemini.Shared</name>
+    </assembly>
+    <members>
+        <member name="T:Gemini.Shared.Contracts.IGeminiService">
+            <summary>
+            Gemini Service
+            </summary>
+        </member>
+        <member name="M:Gemini.Shared.Contracts.IGeminiService.GetIssuesAsync(System.Int32,System.Int32,System.Nullable{System.Int32},System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Get the issues based on query parameters
+            </summary>
+            <param name="projectId"></param>
+            <param name="year"></param>
+            <param name="sprint"></param>
+            <param name="excludeDone"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gemini.Shared.Contracts.IGeminiService.GetIssueAsync(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Get an issue by id
+            </summary>
+            <param name="issueId"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gemini.Shared.Contracts.IGeminiService.GetProjectAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Get a project by code
+            </summary>
+            <param name="str"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gemini.Shared.Contracts.IGeminiService.GetIssueByCodeAsync(System.Int32,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Get issues based on a search code
+            </summary>
+            <param name="projectId"></param>
+            <param name="searchName"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Gemini.Shared.Models.GeminiCustomField">
+            <summary>
+            The Gemini custom field, with issue id, user id and data
+            </summary>
+        </member>
+        <member name="P:Gemini.Shared.Models.GeminiCustomField.CustomFieldDataId">
+            <summary>
+            The id of this custom data
+            </summary>
+        </member>
+        <member name="P:Gemini.Shared.Models.GeminiCustomField.CustomFieldId">
+            <summary>
+            The if of this cusom id type
+            </summary>
+        </member>
+        <member name="P:Gemini.Shared.Models.GeminiCustomField.UserId">
+            <summary>
+            The user id
+            </summary>
+        </member>
+        <member name="P:Gemini.Shared.Models.GeminiCustomField.ProjectId">
+            <summary>
+            The project id
+            </summary>
+        </member>
+        <member name="P:Gemini.Shared.Models.GeminiCustomField.IssueId">
+            <summary>
+            The issue id
+            </summary>
+        </member>
+        <member name="P:Gemini.Shared.Models.GeminiCustomField.FieldData">
+            <summary>
+            The data of this field
+            </summary>
+        </member>
+        <member name="P:Gemini.Shared.Models.GeminiCustomField.Created">
+            <summary>
+            The date the field was created
+            </summary>
+        </member>
+        <member name="T:Gemini.Shared.Models.GeminiIssue">
+            <summary>
+            The gemini issue with all details
+            </summary>
+        </member>
+        <member name="P:Gemini.Shared.Models.GeminiIssue.IssueId">
+            <summary>
+            Issue's Id
+            </summary>
+        </member>
+        <member name="P:Gemini.Shared.Models.GeminiIssue.IssueTypeId">
+            <summary>
+            Issue's id type
+            </summary>
+        </member>
+        <member name="P:Gemini.Shared.Models.GeminiIssue.ReportedById">
+            <summary>
+            Reported by id
+            </summary>
+        </member>
+        <member name="P:Gemini.Shared.Models.GeminiIssue.ReportedByName">
+            <summary>
+            Reported by name
+            </summary>
+        </member>
+        <member name="P:Gemini.Shared.Models.GeminiIssue.Sprint">
+            <summary>
+            The sprint this issue is related to
+            </summary>
+        </member>
+        <member name="P:Gemini.Shared.Models.GeminiIssue.TargetVersion">
+            <summary>
+            Target version of this issue
+            </summary>
+        </member>
+        <member name="P:Gemini.Shared.Models.GeminiIssue.CreatedDate">
+            <summary>
+            When it was created
+            </summary>
+        </member>
+        <member name="P:Gemini.Shared.Models.GeminiIssue.AcceptedDate">
+            <summary>
+            When it was accepted
+            </summary>
+        </member>
+        <member name="P:Gemini.Shared.Models.GeminiIssue.ResolvedDate">
+            <summary>
+            When it was resolved
+            </summary>
+        </member>
+        <member name="P:Gemini.Shared.Models.GeminiIssue.ClosedDate">
+            <summary>
+            When it was closed
+            </summary>
+        </member>
+        <member name="P:Gemini.Shared.Models.GeminiIssue.ProjectCode">
+            <summary>
+            The project code
+            </summary>
+        </member>
+        <member name="P:Gemini.Shared.Models.GeminiIssue.ProjectId">
+            <summary>
+            the project id
+            </summary>
+        </member>
+        <member name="P:Gemini.Shared.Models.GeminiIssue.ProjectName">
+            <summary>
+            The name of the project
+            </summary>
+        </member>
+        <member name="P:Gemini.Shared.Models.GeminiIssue.Summary">
+            <summary>
+            The summary
+            </summary>
+        </member>
+        <member name="P:Gemini.Shared.Models.GeminiIssue.IssueResolutionId">
+            <summary>
+            The item resolution id
+            </summary>
+        </member>
+        <member name="P:Gemini.Shared.Models.GeminiIssue.IssueStatusId">
+            <summary>
+            Ths status id
+            </summary>
+        </member>
+        <member name="P:Gemini.Shared.Models.GeminiIssue.IssueKey">
+            <summary>
+            The issue key
+            </summary>
+        </member>
+        <member name="P:Gemini.Shared.Models.GeminiIssue.Version">
+            <summary>
+            The fixed in version
+            </summary>
+        </member>
+        <member name="P:Gemini.Shared.Models.GeminiIssue.IssueUri">
+            <summary>
+            The gemini issue url
+            </summary>
+        </member>
+        <member name="P:Gemini.Shared.Models.GeminiIssue.Description">
+            <summary>
+            Description from gemini
+            </summary>
+        </member>
+        <member name="P:Gemini.Shared.Models.GeminiIssue.Status">
+            <summary>
+            Status from gemini
+            </summary>
+        </member>
+        <member name="P:Gemini.Shared.Models.GeminiIssue.HistoryItems">
+            <summary>
+            The history items if requested
+            </summary>
+        </member>
+        <member name="P:Gemini.Shared.Models.GeminiIssue.CustomFields">
+            <summary>
+            The custom fields if requested
+            </summary>
+        </member>
+        <member name="T:Gemini.Shared.Models.GeminiIssueHistory">
+            <summary>
+            The issue history item
+            </summary>
+        </member>
+        <member name="P:Gemini.Shared.Models.GeminiIssueHistory.HistoryId">
+            <summary>
+            The id of the history
+            </summary>
+        </member>
+        <member name="P:Gemini.Shared.Models.GeminiIssueHistory.IssueId">
+            <summary>
+            the issue id
+            </summary>
+        </member>
+        <member name="P:Gemini.Shared.Models.GeminiIssueHistory.ProjectId">
+            <summary>
+            the project id
+            </summary>
+        </member>
+        <member name="P:Gemini.Shared.Models.GeminiIssueHistory.History">
+            <summary>
+            the history data
+            </summary>
+        </member>
+        <member name="P:Gemini.Shared.Models.GeminiIssueHistory.UserName">
+            <summary>
+            the usename
+            </summary>
+        </member>
+        <member name="P:Gemini.Shared.Models.GeminiIssueHistory.Created">
+            <summary>
+            the date it was added
+            </summary>
+        </member>
+        <member name="T:Gemini.Shared.Models.GeminiProject">
+            <summary>
+            Representa the details of the gemini project
+            </summary>
+        </member>
+        <member name="P:Gemini.Shared.Models.GeminiProject.ProjectId">
+            <summary>
+            The project id
+            </summary>
+        </member>
+        <member name="P:Gemini.Shared.Models.GeminiProject.ProjectName">
+            <summary>
+            The name of the project
+            </summary>
+        </member>
+        <member name="P:Gemini.Shared.Models.GeminiProject.ProjectCode">
+            <summary>
+            The code of the project like NXMED
+            </summary>
+        </member>
+        <member name="P:Gemini.Shared.Models.GeminiProject.ProjectDescription">
+            <summary>
+            Project's description
+            </summary>
+        </member>
+        <member name="P:Gemini.Shared.Models.GeminiProject.Created">
+            <summary>
+            The date when the project was created
+            </summary>
+        </member>
+        <member name="P:Gemini.Shared.Models.GeminiProject.ProjectUri">
+            <summary>
+            The project url
+            </summary>
+        </member>
+    </members>
+</doc>

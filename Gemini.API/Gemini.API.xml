@@ -1,0 +1,267 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Gemini.API</name>
+    </assembly>
+    <members>
+        <member name="T:Gemini.API.Controllers.GeminiCustomFieldController">
+            <summary>
+            Custom field controller
+            </summary>
+        </member>
+        <member name="M:Gemini.API.Controllers.GeminiCustomFieldController.#ctor(Gemini.Data.Services.IGeminiRepository,AutoMapper.IMapper)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="geminiRepository"></param>
+            <param name="mapper"></param>
+        </member>
+        <member name="M:Gemini.API.Controllers.GeminiCustomFieldController.GetGeminiCustomFields(System.Int64,System.Nullable{System.Int64})">
+            <summary>
+            Get all history fields connected to an issue
+            </summary>
+            <param name="issueId">The Gemini id of the field</param>
+            <param name="fieldTypeId">A filter that defines the type of the field to retrieve</param>
+            <returns>An ActionResult containning the custom fields - Async</returns>
+            <response code="200">Returns the list of custome fields if any</response>
+        </member>
+        <member name="M:Gemini.API.Controllers.GeminiCustomFieldController.GetGeminiCustomField(System.Int64,System.Int64)">
+            <summary>
+            Get a history fields connected to an issue
+            </summary>
+            <param name="issueId">The issue's id</param>
+            <param name="fieldId">The id for the field</param>
+            <returns></returns>
+            <response code="200">Returns the custom field</response>
+        </member>
+        <member name="T:Gemini.API.Controllers.GeminiIssueHistoryController">
+            <summary>
+            The issue history controller
+            </summary>
+        </member>
+        <member name="M:Gemini.API.Controllers.GeminiIssueHistoryController.#ctor(Gemini.Data.Services.IGeminiRepository,AutoMapper.IMapper)">
+            <summary>
+            Ctor
+            </summary>
+            <param name="geminiRepository"></param>
+            <param name="mapper"></param>
+        </member>
+        <member name="M:Gemini.API.Controllers.GeminiIssueHistoryController.GetGeminiHistories(System.Int64)">
+            <summary>
+            Returns all history items for a specifice issue
+            </summary>
+            <param name="issueId">The id of the field</param>
+            <returns></returns>
+            <response code="200">Returns a list of history items </response>
+        </member>
+        <member name="M:Gemini.API.Controllers.GeminiIssueHistoryController.GetGeminiHistory(System.Int64,System.Int64)">
+            <summary>
+            Returns a specific history id for an issue
+            </summary>
+            <param name="issueId">The id of the issue</param>
+            <param name="historyId">The id of the history item</param>
+            <returns></returns>
+            <response code="200">Returns the history item</response>
+        </member>
+        <member name="T:Gemini.API.Controllers.GeminiIssuesController">
+            <summary>
+            The gemini issue controller
+            </summary>
+        </member>
+        <member name="M:Gemini.API.Controllers.GeminiIssuesController.#ctor(Gemini.Data.Services.IGeminiRepository,AutoMapper.IMapper,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="geminiRepository"></param>
+            <param name="mapper"></param>
+            <param name="configuration"></param>
+        </member>
+        <member name="M:Gemini.API.Controllers.GeminiIssuesController.GetGeminiIssues(System.Int64,Gemini.Data.QueryParameters.IssuesQueryParameters)">
+            <summary>
+            Gets a list of issues for a certain project and year (query). Default year is current year.
+            </summary>
+            <param name="projectId">The project's id</param>
+            <param name="issueQueryParameters">The query parameters</param>
+            <returns></returns>
+            <response code="200">Returns a list of issues </response>
+        </member>
+        <member name="M:Gemini.API.Controllers.GeminiIssuesController.GetGeminiAcceptedIssues(System.Int64,Gemini.Data.QueryParameters.IssuesQueryParameters)">
+            <summary>
+            Gets a list of accepted issues for a certain project and year (query). Default year is current year.
+            </summary>
+            <param name="projectId">The project's id</param>
+            <param name="issueQueryParameters">The query parameter</param>
+            <returns></returns>
+            <response code="200">Returns a list of accpeted issues</response>
+        </member>
+        <member name="M:Gemini.API.Controllers.GeminiIssuesController.GetGeminiIssueByCode(System.Int64,System.String,Gemini.Data.QueryParameters.SingleIssueQueryParameter)">
+            <summary>
+            Returns an issue by code for a certain project
+            </summary>
+            <param name="projectId">The project's id</param>
+            <param name="code">The issue code</param>
+            <param name="singleIssueQueryParameter">The query parameters</param>
+            <returns></returns>
+            <response code="200">Returns the requested issue </response>
+            
+        </member>
+        <member name="M:Gemini.API.Controllers.GeminiIssuesController.GetGeminiIssueById(System.Int64,Gemini.Data.QueryParameters.SingleIssueQueryParameter)">
+            <summary>
+            Returns an issue by id for a certain project
+            </summary>
+            <param name="issueId">The issue's id</param>
+            <param name="singleIssueQueryParameter">The query parameters</param>
+            <returns></returns>
+            <response code="200">Returns the requested issue </response>
+        </member>
+        <member name="T:Gemini.API.Controllers.GeminiOdataController">
+            <summary>
+            The gemini issue controller
+            </summary>
+        </member>
+        <member name="M:Gemini.API.Controllers.GeminiOdataController.#ctor(Gemini.Data.Services.IGeminiRepository)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="geminiRepository"></param>
+        </member>
+        <member name="M:Gemini.API.Controllers.GeminiOdataController.GetGeminiIssues(System.Int64,Microsoft.AspNet.OData.Query.ODataQueryOptions{Gemini.Data.Entities.GeminiIssueEntity})">
+            <summary>
+            Gets a list of issues for a certain project and year (query).
+            </summary>
+            <param name="projectId">The project's id</param>
+            <param name="options">The current OData query options.</param>
+            <returns></returns>
+            <response code="200">Returns a list of issues </response>
+        </member>
+        <member name="T:Gemini.API.Controllers.GeminiProjectController">
+            <summary>
+            Provides details from gemini
+            </summary>
+        </member>
+        <member name="M:Gemini.API.Controllers.GeminiProjectController.#ctor(Gemini.Data.Services.IGeminiRepository,AutoMapper.IMapper,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="geminiRepository"></param>
+            <param name="mapper"></param>
+            <param name="configuration"></param>
+        </member>
+        <member name="M:Gemini.API.Controllers.GeminiProjectController.GetGeminiProject(System.Int64)">
+            <summary>
+            Returns a project
+            </summary>
+            <param name="projectId">The project's id</param>
+            <returns></returns>
+            <response code="200">Returns the requested issue </response>
+        </member>
+        <member name="T:Gemini.API.Controllers.WindowsUserController">
+            <summary>
+            Windows user controller
+            </summary>
+        </member>
+        <member name="M:Gemini.API.Controllers.WindowsUserController.#ctor(Microsoft.AspNetCore.Http.IHttpContextAccessor)">
+            <summary>
+            Meta information for the current logged in user
+            </summary>
+            <param name="httpContextAccessor"></param>
+        </member>
+        <member name="M:Gemini.API.Controllers.WindowsUserController.GetLoggedUser">
+            <summary>
+            Gets the current logged user
+            </summary>
+            <returns>The User.Identity.Name in <see cref="P:Microsoft.AspNetCore.Http.IHttpContextAccessor.HttpContext"/></returns>
+            <response code="200">Returns string with the user name </response>
+        </member>
+        <member name="T:Gemini.API.Helpers.GeminiUrlHelper">
+            <summary>
+            Helps buiding url within this service
+            </summary>
+        </member>
+        <member name="M:Gemini.API.Helpers.GeminiUrlHelper.#ctor(System.Uri)">
+            <summary>
+            New helper
+            </summary>
+            <param name="baseUri"></param>
+        </member>
+        <member name="M:Gemini.API.Helpers.GeminiUrlHelper.BuilIssuedUri(Gemini.Shared.Models.GeminiIssue)">
+            <summary>
+            builds a issue url
+            </summary>
+            <param name="geminiIssue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gemini.API.Helpers.GeminiUrlHelper.BuildProjectUri(Gemini.Shared.Models.GeminiProject)">
+            <summary>
+            Builds a project url
+            </summary>
+            <param name="geminiProject"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Gemini.API.Profiles.GeminiProfile">
+            <summary>
+            A mapping profile for entity => dto mapping
+            </summary>
+        </member>
+        <member name="M:Gemini.API.Profiles.GeminiProfile.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            ctor that sets the mapping
+            </summary>
+        </member>
+        <member name="T:Gemini.API.Program">
+            <summary>
+            Main entry point
+            </summary>
+        </member>
+        <member name="M:Gemini.API.Program.Main(System.String[])">
+            <summary>
+            start of the api service
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:Gemini.API.Program.CreateHostBuilder(System.String[])">
+            <summary>
+            Create and configure the host
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Gemini.API.Startup">
+            <summary>
+            Star class for asp.net
+            </summary>
+        </member>
+        <member name="M:Gemini.API.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Gemini.API.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            This method gets called by the runtime. Use this method to add services to the container.
+            <paramref name="services"/>
+            </summary>
+        </member>
+        <member name="M:Gemini.API.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment,Microsoft.AspNetCore.Mvc.ApiExplorer.IApiVersionDescriptionProvider)">
+            <summary>
+            This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+            </summary>
+        </member>
+        <member name="T:Gemini.API.Swagger.ConfigureSwaggerOptions">
+            <summary>
+            Configures the Swagger generation options.
+            </summary>
+            <remarks>This allows API versioning to define a Swagger document per API version after the
+            <see cref="T:Microsoft.AspNetCore.Mvc.ApiExplorer.IApiVersionDescriptionProvider"/> service has been resolved from the service container.</remarks>
+        </member>
+        <member name="M:Gemini.API.Swagger.ConfigureSwaggerOptions.#ctor(Microsoft.AspNetCore.Mvc.ApiExplorer.IApiVersionDescriptionProvider)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Gemini.API.Swagger.ConfigureSwaggerOptions"/> class.
+            </summary>
+            <param name="provider">The <see cref="T:Microsoft.AspNetCore.Mvc.ApiExplorer.IApiVersionDescriptionProvider">provider</see> used to generate Swagger documents.</param>
+        </member>
+        <member name="M:Gemini.API.Swagger.ConfigureSwaggerOptions.Configure(Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenOptions)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>
