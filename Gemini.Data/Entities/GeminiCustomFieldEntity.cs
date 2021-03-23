@@ -1,9 +1,11 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace Gemini.Data.Entities
 {
     public class GeminiCustomFieldEntity
     {
+        [Key]
         public decimal CustomFieldDataId { get; set; }
 
         public decimal CustomFieldId { get; set; }

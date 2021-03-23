@@ -15,7 +15,7 @@ namespace Gemini.Data.Entities
 
         public string ReportedByName { get; set; } = string.Empty;
 
-        public DateTime Created { get; set; }
+        public DateTime CreatedDate { get; set; }
 
         public DateTime? ResolvedDate { get; set; }
 

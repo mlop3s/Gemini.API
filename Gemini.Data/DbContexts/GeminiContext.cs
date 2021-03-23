@@ -41,7 +41,7 @@ namespace Gemini.Data.DbContexts
             modelBuilder.Entity<GeminiIssueEntity>().HasNoKey().ToView("gemini_issuesview");
 
             modelBuilder.Entity<GeminiIssueEntity>().Property(x => x.IssueId).HasColumnName("issueid");
-            modelBuilder.Entity<GeminiIssueEntity>().Property(x => x.Created).HasColumnName("created");
+            modelBuilder.Entity<GeminiIssueEntity>().Property(x => x.CreatedDate).HasColumnName("created");
             modelBuilder.Entity<GeminiIssueEntity>().Property(x => x.ResolvedDate).HasColumnName("resolveddate");
             modelBuilder.Entity<GeminiIssueEntity>().Property(x => x.IssueTypeId).HasColumnName("issuetypeid");
             modelBuilder.Entity<GeminiIssueEntity>().Property(x => x.ReportedByName).HasColumnName("reporteddesc");

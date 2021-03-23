@@ -22,7 +22,6 @@
     },
     "CourseLibrary.API": {
       "commandName": "Project",
-      "launchBrowser": true,
       "launchUrl": "api/issues",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"

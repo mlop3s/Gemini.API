@@ -46,12 +46,14 @@ namespace Gemini.API.Controllers
         {
             var validationSettings = new ODataValidationSettings()
             {
-                AllowedQueryOptions = Select | OrderBy | Top | Skip | Count | Filter,
+                AllowedQueryOptions = Select | OrderBy | Top | Skip | Count | Filter | Expand,
                 AllowedArithmeticOperators = AllowedArithmeticOperators.None,
                 AllowedFunctions = AllowedFunctions.None,
                 AllowedLogicalOperators = AllowedLogicalOperators.All,
-                MaxTop = 20,
+                MaxTop = 20,                
             };
+
+            validationSettings.AllowedOrderByProperties.Add(nameof(GeminiIssueEntity.IssueId));
 
             try
             {
@@ -63,7 +65,8 @@ namespace Gemini.API.Controllers
             }
 
             var issues = _geminiRepository.GetQueryableIssues(projectId);
-            return Ok(options.ApplyTo(issues));
+            var result = options.ApplyTo(issues);
+            return Ok(result);
         }
     }
 }

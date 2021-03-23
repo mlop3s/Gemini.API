@@ -82,7 +82,7 @@ namespace Gemini.API
             var mapper = mapperConfig.CreateMapper();
             services.AddSingleton(mapper);
 
-            services.AddScoped<IGeminiRepository, GeminiRepository>();
+            services.AddScoped<IGeminiRepository, GeminiInMemoryRepository>();
 
             services.AddDbContext<GeminiContext>();
 
@@ -224,7 +224,13 @@ namespace Gemini.API
         private static IEdmModel GetEdmModel()
         {
             var builder = new ODataConventionModelBuilder();
-            builder.EntitySet<GeminiIssueEntity>("projects");
+            var entity = builder.EntitySet<GeminiIssueEntity>("projects").EntityType;
+            builder.EntitySet<GeminiIssueHistoryEntity>("GeminiIssueHistory");
+            builder.EntitySet<GeminiCustomFieldEntity>("GeminiCustomField");
+
+            entity.HasMany<GeminiIssueHistoryEntity>(x => x.HistoryItems);
+            entity.HasMany<GeminiCustomFieldEntity>(x => x.CustomFields);
+
             return builder.GetEdmModel();
         }
 
