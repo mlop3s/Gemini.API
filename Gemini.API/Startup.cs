@@ -231,6 +231,8 @@ namespace Gemini.API
             entity.HasMany<GeminiIssueHistoryEntity>(x => x.HistoryItems);
             entity.HasMany<GeminiCustomFieldEntity>(x => x.CustomFields);
 
+            entity.Select().Filter().Expand();
+
             return builder.GetEdmModel();
         }
 
