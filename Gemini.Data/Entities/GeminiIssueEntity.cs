@@ -41,9 +41,9 @@ namespace Gemini.Data.Entities
 
         public string? Version { get; set; }
 
-        public ICollection<GeminiIssueHistoryEntity> HistoryItems { get; set; } = new List<GeminiIssueHistoryEntity>();
+        public ICollection<GeminiIssueHistoryEntity> HistoryItems { get; set; }
 
-        public ICollection<GeminiCustomFieldEntity> CustomFields { get; set; } = new List<GeminiCustomFieldEntity>();
+        public ICollection<GeminiCustomFieldEntity> CustomFields { get; set; }
 
     }
 }
